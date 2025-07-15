@@ -24,7 +24,7 @@ public class ZskyBackendApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**") // Apply CORS to all /api endpoints
-                        .allowedOrigins("http://localhost:3000", "https://zsky-solutions.vercel.app/") // Allow requests from your frontend's development and production URLs
+                        .allowedOrigins("http://localhost:3000", "https://zsky-solutions.vercel.app/", "https://zskysolutions.xyz", "https://www.zskysolutions.xyz") // Allow requests from your frontend's development and production URLs
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allowed HTTP methods
                         .allowedHeaders("*") // Allow all headers
                         .allowCredentials(true); // Allow sending cookies/auth headers
