@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.google.apis</groupId>
             <artifactId>google-api-services-gmail</artifactId>
-            <version>v1-rev20220404-2.0.0</version> <!-- CORRECTED VERSION AS PROVIDED BY YOU -->
+            <version>v1-rev20220404-2.0.0</version>
         </dependency>
 
         <!-- Explicitly add google-http-client-jackson2 for JacksonFactory -->
@@ -56,18 +56,28 @@
             <artifactId>google-http-client-jackson2</artifactId>
             <version>1.43.0</version>
         </dependency>
+        <!-- For GsonFactory (alternative to JacksonFactory) -->
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client-gson</artifactId>
+            <version>1.43.0</version>
+        </dependency>
 
         <!-- Jakarta Mail API and Implementation -->
+        <!-- FIX: Ensuring correct Jakarta Mail implementation version -->
         <dependency>
             <groupId>jakarta.mail</groupId>
             <artifactId>jakarta.mail-api</artifactId>
             <version>2.1.2</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.mail</groupId>
+            <groupId>org.eclipse.angus</groupId> <!-- Changed GroupId to org.eclipse.angus -->
             <artifactId>jakarta.mail</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.1</version> <!-- This version is typically used with Jakarta EE 9+ -->
+            <scope>runtime</scope> <!-- Often helps with classloader issues -->
         </dependency>
+        <!-- Removed com.sun.mail:jakarta.mail as it's older and might conflict -->
+
 
         <!-- Apache Commons Codec for Base64 encoding (used by GmailService) -->
         <dependency>
